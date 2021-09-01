@@ -1,6 +1,7 @@
 package com.example.springhibernatebook;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-
 @RestController
 @RequestMapping("/books")
 @Component
@@ -22,7 +22,6 @@ class DataLoader {
     private final BookRepository bookRepository;
 
     //private List<Book> books = new ArrayList<>();
-
     public DataLoader(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
@@ -30,16 +29,11 @@ class DataLoader {
     private void loadData(){
         bookRepository.saveAll(
                 List.of(
-                        new Book("Fullstack React: The Complete Guide to ReactJS and Friends"),
-                        new Book("Война и Мир"),
-                        new Book("Nolyn: The Rise and Fall, Book 1"),
-                        new Book("Анна Каренина"),
-                        new Book("American Marxism"),
-                        new Book("Billy Summers"),
-                        new Book("Dark Roads: A Novel"),
-                        new Book("Once There Were Wolves"),
-                        new Book("If You Tell: A True Story of Murder, Family Secrets, and the Unbreakable Bond of Sisterhood"),
-                        new Book("Greenlights")
+                        new Book("Fullstack React: The Complete Guide to ReactJS and Friends",
+                                "Anthony Accomazzo",
+                                "Leanpub",
+                                "2020-01-13",
+                                "https://images-na.ssl-images-amazon.com/images/I/51CMUOgy8HL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg")
                 ));
     }
 
