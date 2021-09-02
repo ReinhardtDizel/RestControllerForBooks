@@ -1,18 +1,21 @@
 package com.example.springhibernatebook;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.repository.Modifying;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 @Entity
 @Table(name = "book")
 public class Book {
 
     @Id
-    @Column(name = "id")
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(name = "id", updatable = false, nullable = false)
     private String id;
 
     //title=======================================================

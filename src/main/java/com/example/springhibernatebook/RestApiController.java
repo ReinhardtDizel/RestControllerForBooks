@@ -29,11 +29,11 @@ class DataLoader {
     private void loadData(){
         bookRepository.saveAll(
                 List.of(
-                        new Book("Fullstack React: The Complete Guide to ReactJS and Friends",
+                        /*new Book("Fullstack React: The Complete Guide to ReactJS and Friends",
                                 "Anthony Accomazzo",
                                 "Leanpub",
                                 "2020-01-13",
-                                "https://images-na.ssl-images-amazon.com/images/I/51CMUOgy8HL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg")
+                                "https://images-na.ssl-images-amazon.com/images/I/51CMUOgy8HL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg")*/
                 ));
     }
 
