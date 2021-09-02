@@ -1,0 +1,2 @@
+# SpringHibernateBook
+Это учебный проект
