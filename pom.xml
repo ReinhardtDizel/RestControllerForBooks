@@ -34,15 +34,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-
-
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,9 +59,17 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
     </dependencies>
 
+
     <build>
+        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -83,6 +82,12 @@
                     <source>9</source>
                     <target>9</target>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.4.0-b180830.0359</version>
             </plugin>
 
             <!-- Hibernate Tips /-->
@@ -109,6 +114,7 @@
             </plugin>
             <!-- Hibernate Tips /-->
         </plugins>
+        </pluginManagement>
     </build>
 
 </project>
